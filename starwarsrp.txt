@@ -1,0 +1,8 @@
+"starwarsrp"
+{
+	"base"		"helix"
+	"title"		"StarwarsRP"
+	"author"	"nebulous.cloud"
+	"category"	"rp"
+	"menusystem" "1"
+}
