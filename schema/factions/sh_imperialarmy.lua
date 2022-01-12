@@ -1,6 +1,6 @@
 
-FACTION.name = "Citizen"
-FACTION.description = "A citizen of the Imperial Empire."
+FACTION.name = "Imperial Ground Forces"
+FACTION.description = "Members of the Galctic Empire's Ground Forces"
 FACTION.color = Color(150, 125, 100, 255)
 FACTION.isDefault = true
 
@@ -17,4 +17,4 @@ function FACTION:OnCharacterCreated(client, character)
 	})
 end
 
-FACTION_CITIZEN = FACTION.index
+FACTION_IGF = FACTION.index
