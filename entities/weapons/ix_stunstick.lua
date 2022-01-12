@@ -17,7 +17,7 @@ SWEP.Drop = false
 SWEP.HoldType = "melee"
 
 SWEP.Spawnable = true
-SWEP.AdminOnly = true
+SWEP.AdminOnly = false
 
 SWEP.ViewModelFOV = 47
 SWEP.ViewModelFlip = false
