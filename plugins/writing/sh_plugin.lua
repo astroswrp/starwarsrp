@@ -6,4 +6,5 @@ PLUGIN.maxLength = 512
 
 ix.util.Include("sv_hooks.lua")
 ix.util.Include("cl_hooks.lua")
---ix.char.vars["description"].bNoDisplay = true
+ix.char.vars["description"].bNoDisplay = true
+ix.char.vars["description"].OnValidate = function() return true    end
