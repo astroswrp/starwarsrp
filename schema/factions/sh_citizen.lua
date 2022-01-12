@@ -1,6 +1,6 @@
 
 FACTION.name = "Citizen"
-FACTION.description = "A regular human citizen enslaved by the Universal Union."
+FACTION.description = "A citizen of the Imperial Empire."
 FACTION.color = Color(150, 125, 100, 255)
 FACTION.isDefault = true
 
