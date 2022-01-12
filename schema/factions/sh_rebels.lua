@@ -1,6 +1,6 @@
 
-FACTION.name = "Administrator"
-FACTION.description = "A human Administrator advised by the Universal Union."
+FACTION.name = "Rebel Alliance"
+FACTION.description = "A traitorous being to the freedom of the Galactic Empire"
 FACTION.color = Color(255, 200, 100, 255)
 FACTION.pay = 50
 FACTION.models = {
@@ -23,4 +23,4 @@ FACTION.models = {
 FACTION.isDefault = false
 FACTION.isGloballyRecognized = true
 
-FACTION_ADMIN = FACTION.index
+FACTION_REBEL = FACTION.index

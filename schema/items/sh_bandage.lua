@@ -1,6 +1,6 @@
 
 ITEM.name = "Bandage"
-ITEM.model = Model("models/props_wasteland/prison_toiletchunk01f.mdl")
+ITEM.model = Model("models/illusion/eftcontainers/bandage.mdl")
 ITEM.description = "A small roll of hand-made gauze."
 ITEM.category = "Medical"
 ITEM.price = 18
