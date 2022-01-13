@@ -4,8 +4,11 @@ CLASS.faction = FACTION_IGF
 function CLASS:OnSet(client)
 	local character = client:GetCharacter()
 
-	if (character) then
+	client:RemoveAllItems()
+	client:Give("weapon_empty_hands")
+	client:Give("rw_sw_e11")
 
+	if (character) then
 		character:SetModel("models/nada/rogueonetk.mdl")
 	end
 end
