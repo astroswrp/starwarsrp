@@ -4,6 +4,7 @@ FACTION.description = "Members of the Galctic Empire's Ground Forces"
 FACTION.color = Color(150, 125, 100, 255)
 FACTION.isDefault = true
 
+
 function FACTION:OnCharacterCreated(client, character)
 	local id = Schema:ZeroNumber(math.random(1, 99999), 5)
 	local inventory = character:GetInventory()
@@ -17,4 +18,5 @@ function FACTION:OnCharacterCreated(client, character)
 	})
 end
 
+FACTION.isDefault = true
 FACTION_IGF = FACTION.index
