@@ -8,6 +8,6 @@ function CLASS:OnSet(client)
 		character:SetModel("models/nada/rogueonetk.mdl")
 	end
 end
-
+ix.anim.SetModelClass("models/nada/rogueonetk.mdl", "citizen_male")
 CLASS.isDefault = false
 CLASS_RECRUIT = CLASS.index
