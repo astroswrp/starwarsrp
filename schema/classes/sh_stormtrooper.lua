@@ -1,7 +1,7 @@
 CLASS.name = "Stormtrooper"
 CLASS.faction = FACTION_IGF
 
-function CLASS:OnSet(client)
+function CLASS:OnSpawn(client)
 	local character = client:GetCharacter()
 
 	client:RemoveAllItems()
