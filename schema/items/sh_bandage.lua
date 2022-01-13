@@ -10,6 +10,6 @@ ITEM.functions.Apply = {
 	OnRun = function(itemTable)
 		local client = itemTable.player
 
-		client:SetHealth(math.min(client:Health() + 20, 100))
+		client:SetHealth(math.min(client:Health() + 15, 100))
 	end
 }

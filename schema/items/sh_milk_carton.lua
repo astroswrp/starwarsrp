@@ -1,9 +1,9 @@
 
-ITEM.name = "Milk Carton"
-ITEM.model = Model("models/props_junk/garbage_milkcarton001a.mdl")
+ITEM.name = "Condensed Milk"
+ITEM.model = Model("models/illusion/eftcontainers/condensedmilk.mdl")
 ITEM.width = 1
 ITEM.height = 1
-ITEM.description = "A carton filled with milk."
+ITEM.description = "A can of Condensed Milk."
 ITEM.category = "Consumables"
 ITEM.permit = "consumables"
 

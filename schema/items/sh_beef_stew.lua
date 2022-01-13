@@ -1,9 +1,9 @@
 
-ITEM.name = "Chinese Takeout"
-ITEM.model = Model("models/props_junk/garbage_takeoutcarton001a.mdl")
+ITEM.name = "Beef Stew"
+ITEM.model = Model("models/illusion/eftcontainers/beefstew.mdl")
 ITEM.width = 1
 ITEM.height = 1
-ITEM.description = "A takeout carton, it's filled with cold noodles."
+ITEM.description = "A can of the Empire's finest Beef Stew."
 ITEM.category = "Consumables"
 ITEM.permit = "consumables"
 

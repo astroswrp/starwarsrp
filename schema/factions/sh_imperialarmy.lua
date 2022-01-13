@@ -4,7 +4,10 @@ FACTION.description = "Members of the Galctic Empire's Ground Forces"
 FACTION.color = Color(150, 125, 100, 255)
 FACTION.isDefault = true
 FACTION.models = {
-	"models/hcn/starwars/bf/human/human_male_5.mdl" 
+	"models/hcn/starwars/bf/human/human_male_5.mdl",
+	"models/hcn/starwars/bf/human/human_male.mdl", 
+	"models/hcn/starwars/bf/human/human_male_2.mdl",
+	"models/hcn/starwars/bf/human/human_male_3.mdl" 
 }
 
 

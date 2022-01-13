@@ -14,8 +14,6 @@ ITEM.functions.Open = {
 				ix.item.Spawn(v, client)
 			end
 		end
-
-		character:GiveMoney(ix.config.Get("rationTokens", 20))
 		client:EmitSound("ambient/fire/mtov_flame2.wav", 75, math.random(160, 180), 0.35)
 	end
 }

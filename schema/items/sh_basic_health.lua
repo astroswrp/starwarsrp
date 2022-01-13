@@ -1,9 +1,9 @@
 
-ITEM.name = "Health Kit"
-ITEM.model = Model("models/items/healthkit.mdl")
-ITEM.description = "A white packet filled with medication."
+ITEM.name = "Basic Medical Kit"
+ITEM.model = Model("models/illusion/eftcontainers/carmedkit.mdl")
+ITEM.description = "A Basic Medical kit containing the necessities for treating wounds"
 ITEM.category = "Medical"
-ITEM.price = 65
+ITEM.price = 10
 
 ITEM.functions.Apply = {
 	sound = "items/medshot4.wav",
