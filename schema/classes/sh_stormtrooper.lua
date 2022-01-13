@@ -5,7 +5,7 @@ function CLASS:OnSet(client)
 	local character = client:GetCharacter()
 
 	if (character) then
-		ix.anim.SetModelClass("models/nada/rogueonetk.mdl", "player")
+
 		character:SetModel("models/nada/rogueonetk.mdl")
 	end
 end

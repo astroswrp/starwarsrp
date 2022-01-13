@@ -4,7 +4,7 @@ FACTION.description = "A traitorous being to the freedom of the Galactic Empire"
 FACTION.color = Color(255, 200, 100, 255)
 FACTION.pay = 50
 FACTION.models = {
-	"models/imperial_officer/navy/grand_admiral/gad_m.mdl"
+	"models/player/sgg/starwars/rebels/r_trooper_captain/male_01.mdl"
 }
 FACTION.isDefault = false
 FACTION.isGloballyRecognized = true

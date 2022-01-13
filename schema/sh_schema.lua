@@ -176,3 +176,5 @@ do
 
 	ix.chat.Register("broadcast", CLASS)
 end
+
+ix.anim.SetModelClass("models/nada/rogueonetk.mdl", "citizen_male")

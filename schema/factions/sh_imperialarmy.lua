@@ -3,6 +3,9 @@ FACTION.name = "Imperial Ground Forces"
 FACTION.description = "Members of the Galctic Empire's Ground Forces"
 FACTION.color = Color(150, 125, 100, 255)
 FACTION.isDefault = true
+FACTION.models = {
+	"models/hcn/starwars/bf/human/human_male_5.mdl" 
+}
 
 
 function FACTION:OnCharacterCreated(client, character)
