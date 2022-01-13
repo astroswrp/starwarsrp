@@ -13,5 +13,10 @@ function CLASS:OnSpawn(client)
 	end
 end
 
+CLASS.weapons = {
+	"weapon_empty_hands",
+	"rw_sw_e11"
+}
+
 CLASS.isDefault = false
 CLASS_RECRUIT = CLASS.index
