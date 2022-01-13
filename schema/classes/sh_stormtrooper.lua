@@ -4,18 +4,13 @@ CLASS.faction = FACTION_IGF
 function CLASS:OnSpawn(client)
 	local character = client:GetCharacter()
 
-	client:RemoveAllItems()
-	client:Give("weapon_empty_hands")
-	client:Give("rw_sw_e11")
-
 	if (character) then
 		character:SetModel("models/nada/rogueonetk.mdl")
 	end
 end
 
 CLASS.weapons = {
-	"weapon_empty_hands",
-	"rw_sw_e11",
+	"rw_sw_e11"
 }
 
 CLASS.isDefault = false

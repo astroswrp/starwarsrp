@@ -10,7 +10,9 @@ FACTION.models = {
 	"models/hcn/starwars/bf/human/human_male_3.mdl" 
 }
 
-
+FACTION.weapons = {
+	"weapon_empty_hands"
+}
 function FACTION:OnCharacterCreated(client, character)
 	local id = Schema:ZeroNumber(math.random(1, 99999), 5)
 	local inventory = character:GetInventory()
