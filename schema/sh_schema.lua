@@ -1,7 +1,7 @@
 
 Schema.name = "Starwars RP"
 Schema.author = "nebulous.cloud"
-Schema.description = "A schema based on the Star Wars Films"
+Schema.description = "Remind me to update this"
 
 -- Include netstream
 ix.util.Include("libs/thirdparty/sh_netstream2.lua")
@@ -28,6 +28,7 @@ ix.anim.SetModelClass("models/eliteshockcp.mdl", "metrocop")
 ix.anim.SetModelClass("models/leet_police2.mdl", "metrocop")
 ix.anim.SetModelClass("models/sect_police2.mdl", "metrocop")
 ix.anim.SetModelClass("models/policetrench.mdl", "metrocop")
+ix.anim.SetModelClass("models/nada/rogueonetk.mdl", "citizen_male")
 
 function Schema:ZeroNumber(number, length)
 	local amount = math.max(0, length - string.len(number))
