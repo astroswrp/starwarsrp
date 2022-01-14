@@ -1,7 +1,7 @@
 CLASS.name = "Stormtrooper"
 CLASS.faction = FACTION_IGF
 
-function CLASS:OnSpawn(client)
+function CLASS:OnSet(client)
 	local character = client:GetCharacter()
 
 	if (character) then
@@ -10,6 +10,7 @@ function CLASS:OnSpawn(client)
 end
 
 CLASS.weapons = {
+	"ven_dc17scommandopistol",
 	"rw_sw_e11"
 }
 
