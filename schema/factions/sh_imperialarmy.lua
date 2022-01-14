@@ -25,6 +25,6 @@ function FACTION:OnCharacterCreated(client, character)
 		id = id
 	})
 end
-
+FACTION.isGloballyRecognized = true
 FACTION.isDefault = true
 FACTION_IGF = FACTION.index

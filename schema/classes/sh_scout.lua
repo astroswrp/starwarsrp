@@ -1,11 +1,11 @@
-CLASS.name = "Stormtrooper"
+CLASS.name = "Scout Trooper"
 CLASS.faction = FACTION_IGF
 
 function CLASS:OnSpawn(client)
 	local character = client:GetCharacter()
 
 	if (character) then
-		character:SetModel("models/nada/rogueonetk.mdl")
+		character:SetModel("models/nada/scouttrooper.mdl")
 	end
 end
 
@@ -14,4 +14,4 @@ CLASS.weapons = {
 }
 
 CLASS.isDefault = false
-CLASS_ST = CLASS.index
+CLASS_SCOUT = CLASS.index

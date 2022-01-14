@@ -1,7 +1,7 @@
 
 Schema.name = "Starwars RP"
-Schema.author = "nebulous.cloud"
-Schema.description = "Remind me to update this"
+Schema.author = "Guy"
+Schema.description = "A Semi-SeriousRP Server"
 
 -- Include netstream
 ix.util.Include("libs/thirdparty/sh_netstream2.lua")
@@ -29,6 +29,7 @@ ix.anim.SetModelClass("models/leet_police2.mdl", "metrocop")
 ix.anim.SetModelClass("models/sect_police2.mdl", "metrocop")
 ix.anim.SetModelClass("models/policetrench.mdl", "metrocop")
 ix.anim.SetModelClass("models/nada/rogueonetk.mdl", "player")
+ix.anim.SetModelClass("models/nada/scouttrooper.mdl", "player")
 ix.anim.SetModelClass("models/hcn/starwars/bf/human/human_male_5.mdl", "player")
 ix.anim.SetModelClass("models/hcn/starwars/bf/human/human_male.mdl", "player")
 ix.anim.SetModelClass("models/hcn/starwars/bf/human/human_male_2.mdl", "player")
