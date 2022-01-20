@@ -34,6 +34,7 @@ ix.anim.SetModelClass("models/hcn/starwars/bf/human/human_male_5.mdl", "player")
 ix.anim.SetModelClass("models/hcn/starwars/bf/human/human_male.mdl", "player")
 ix.anim.SetModelClass("models/hcn/starwars/bf/human/human_male_2.mdl", "player")
 ix.anim.SetModelClass("models/hcn/starwars/bf/human/human_male_3.mdl", "player")
+ix.anim.SetModelClass("models/nada/scouttrooper.mdl", "player")
 
 
 function Schema:ZeroNumber(number, length)
