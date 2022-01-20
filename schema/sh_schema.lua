@@ -35,7 +35,15 @@ ix.anim.SetModelClass("models/hcn/starwars/bf/human/human_male.mdl", "player")
 ix.anim.SetModelClass("models/hcn/starwars/bf/human/human_male_2.mdl", "player")
 ix.anim.SetModelClass("models/hcn/starwars/bf/human/human_male_3.mdl", "player")
 ix.anim.SetModelClass("models/nada/scouttrooper.mdl", "player")
-
+ix.anim.SetModelClass("models/nada/rogueonenova.mdl", "player")
+ix.anim.SetModelClass("models/nada/tiepilot.mdl", "player")
+ix.anim.SetModelClass("models/nada/rogueonemortar.mdl", "player")
+ix.anim.SetModelClass("models/imperial_officer/isb/operative/op_m.mdl", "player")
+ix.anim.SetModelClass("models/player/markus/custom/characters/hero/deathtrooper/male/deathtrooper_male_01/deathtrooper_01_male_mesh.mdl", "player")
+--[[
+ix.anim.SetModelClass("models/nada/scouttrooper.mdl", "player")
+ix.anim.SetModelClass("models/nada/scouttrooper.mdl", "player")
+]]--
 
 function Schema:ZeroNumber(number, length)
 	local amount = math.max(0, length - string.len(number))
