@@ -1,5 +1,5 @@
 
-ITEM.name = "Citizen ID"
+ITEM.name = "Imperial ID"
 ITEM.model = Model("models/gibs/metal_gib4.mdl")
 ITEM.description = "A citizen identification card with ID #%s, assigned to %s."
 

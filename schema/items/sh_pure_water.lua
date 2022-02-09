@@ -12,7 +12,4 @@ ITEM.functions.Drink = {
 		client:SetHealth(math.Clamp(client:Health() +20, 0, client:GetMaxHealth()))
 		client:EmitSound("npc/barnacle/barnacle_gulp2.wav", 75, 90, 0.35)
 	end,
-	OnCanRun = function(itemTable)
-		return !itemTable.player:IsCombine()
-	end
 }
