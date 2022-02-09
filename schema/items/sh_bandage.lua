@@ -1,10 +1,10 @@
-
 ITEM.name = "Bandage"
 ITEM.model = Model("models/illusion/eftcontainers/bandage.mdl")
 ITEM.description = "A small roll of hand-made gauze."
 ITEM.category = "Medical"
-ITEM.price = 18
 
+--ITEM.price = 18
+--[[
 ITEM.functions.Apply = {
 	sound = "items/medshot4.wav",
 	OnRun = function(itemTable)
@@ -12,4 +12,4 @@ ITEM.functions.Apply = {
 
 		client:SetHealth(math.min(client:Health() + 15, 100))
 	end
-}
+}]]--

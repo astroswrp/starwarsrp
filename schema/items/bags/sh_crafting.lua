@@ -1,3 +1,3 @@
-ITEM.name = "Crafting Bag"
+ITEM.name = "Crafting Box"
 ITEM.description = "A container to hold crafting materials."
-ITEM.model = Model("models/illusion/eftcontainers/moneycase.mdl")
+ITEM.model = Model("models/illusion/eftcontainers/magbox.mdl")
