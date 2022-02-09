@@ -21,7 +21,7 @@
 --	https://steamcommunity.com/id/Taxin2012/
 
 
-
+--[[]
 PLUGIN.GunData[ "tfa_ins2_ak74m" ] = {
 	--Weapon can be Blacklisted and item will be not auto-generated
 	BlackList = false,
@@ -52,4 +52,4 @@ PLUGIN.GunData[ "tfa_ins2_ak74m" ] = {
 	
 	--Sec == Secondary
 	Sec = {}
-}
+}]]--
