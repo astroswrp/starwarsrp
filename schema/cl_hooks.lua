@@ -1,4 +1,3 @@
-
 function Schema:PopulateCharacterInfo(client, character, tooltip)
 	if (client:IsRestricted()) then
 		local panel = tooltip:AddRowAfter("name", "ziptie")
@@ -248,20 +247,8 @@ function Schema:PopulateHelpMenu(tabs)
 	end
 end
 
-netstream.Hook("CombineDisplayMessage", function(text, color, arguments)
-	if (IsValid(ix.gui.combine)) then
-		ix.gui.combine:AddLine(text, color, nil, unpack(arguments))
-	end
-end)
-
 netstream.Hook("PlaySound", function(sound)
 	surface.PlaySound(sound)
-end)
-
-netstream.Hook("Frequency", function(oldFrequency)
-	Derma_StringRequest("Frequency", "What would you like to set the frequency to?", oldFrequency, function(text)
-		ix.command.Send("SetFreq", text)
-	end)
 end)
 
 netstream.Hook("ViewData", function(target, cid, data)
