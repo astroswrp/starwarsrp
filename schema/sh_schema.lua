@@ -7,13 +7,13 @@ Schema.description = "A Semi-SeriousRP Server"
 ix.util.Include("libs/thirdparty/sh_netstream2.lua")
 
 ix.util.Include("sh_configs.lua")
+ix.util.Include("sv_schema.lua")
+--[[
 ix.util.Include("sh_commands.lua")
-
 ix.util.Include("cl_schema.lua")
 ix.util.Include("cl_hooks.lua")
 ix.util.Include("sh_hooks.lua")
 ix.util.Include("sh_voices.lua")
-ix.util.Include("sv_schema.lua")
 ix.util.Include("sv_hooks.lua")
 
 ix.util.Include("meta/sh_player.lua")
@@ -22,7 +22,7 @@ ix.util.Include("meta/sh_character.lua")
 
 ix.flag.Add("v", "Access to light blackmarket goods.")
 ix.flag.Add("V", "Access to heavy blackmarket goods.")
-
+]]--
 ix.anim.SetModelClass("models/nada/rogueonetk.mdl", "player")
 ix.anim.SetModelClass("models/nada/scouttrooper.mdl", "player")
 ix.anim.SetModelClass("models/hcn/starwars/bf/human/human_male_5.mdl", "player")
