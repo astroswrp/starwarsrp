@@ -1,6 +1,6 @@
 
 Schema.name = "Starwars RP"
-Schema.author = "Guy"
+Schema.author = "Rey"
 Schema.description = "A Semi-SeriousRP Server"
 
 -- Include netstream
