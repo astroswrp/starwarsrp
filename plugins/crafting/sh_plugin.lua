@@ -43,30 +43,14 @@ end
 TODO: For release, demonstrate full capacity of plugin.
 ---------------------------------------------------------------------------]]
 local NEW_RECIPES = {
-	["metal_downgrade_reclaimed"] = {
-		["name"] = "Breakdown: Reclaimed Metal",
-		["model"] = "models/props_c17/oildrumchunk01d.mdl",
-		["desc"] = "Break down Reclaimed Metal into Scrap Metal.",
-		["requirements"] = {["reclaimed_metal"] = 1, ["scrap_hammer"] = 1},
-		["results"] = {["scrap_metal"] = 2},
-		["category"] = "Metal Breakdown"
+	["transparisteel"] = {
+		["name"] = "Transparisteel",
+		["model"] = "models/illusion/eftcontainers/plexiglass.mdl",
+		["desc"] = "Transparisteel, made from Refined Lommite Ore",
+		["requirements"] = {["r_lommite"] = 1},
+		["results"] = {["transparisteel"] = 2},
+		["category"] = "Materials"
 	},
-	["metal_downgrade_refined"] = {
-		["name"] = "Breakdown: Refined Metal",
-		["model"] = "models/props_c17/canisterchunk02a.mdl",
-		["desc"] = "Break down Refined Metal into Reclaimed Metal.",
-		["requirements"] = {["refined_metal"] = 1, ["scrap_hammer"] = 1},
-		["results"] = {["reclaimed_metal"] = 2},
-		["category"] = "Metal Breakdown",
-	},
-	["metal_upgrade_reclaimed"] = {
-		["name"] = "Metal: Reclaimed Metal",
-		["model"] = "models/props_c17/oildrumchunk01d.mdl",
-		["desc"] = "Break down Refined Metal into Reclaimed Metal.",
-		["requirements"] = {["scrap_metal"] = 3},
-		["results"] = {["reclaimed_metal"] = 1},
-		["category"] = "Metal Upgrade",
-	}
 }
 
 for k, v in pairs(NEW_RECIPES) do

@@ -1,6 +1,0 @@
-ITEM.name = "Zielona Opaska"
-ITEM.model = "models/props_lab/clipboard.mdl"
-ITEM.description = "Zielona opaska lojalisty."
-ITEM.category = "Bands"
-ITEM.band = "green"
-ITEM.noBusiness = true
