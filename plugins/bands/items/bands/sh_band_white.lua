@@ -3,3 +3,4 @@ ITEM.model = "models/props_lab/clipboard.mdl"
 ITEM.description = "Biała opaska lojalisty."
 ITEM.category = "Bands"
 ITEM.band = "white"
+ITEM.noBusiness = true
