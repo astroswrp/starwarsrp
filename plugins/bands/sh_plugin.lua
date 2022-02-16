@@ -1,6 +1,6 @@
 
-PLUGIN.name = "Opaski"
-PLUGIN.description = "Nowe opaski dla citizenów, które po założeniu wyświetlają pod nickiem stosowny tekst."
+PLUGIN.name = "Bands"
+PLUGIN.description = "Colored Bands"
 PLUGIN.author = "lechu2375"
 
 

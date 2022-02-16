@@ -40,4 +40,6 @@ end
 --Example:
 --PLUGIN:AddLink('WhatCommandShouldTheyTypeInChat', 'The Description of the command in chat!.', 'https://bfy.tw/RZFf')
 
-PLUGIN:AddLink('TestLink', 'Links to a test url.', 'https://www.google.com')
+PLUGIN:AddLink('workshop', 'Links to our Content Pack', 'https://steamcommunity.com/sharedfiles/filedetails/?id=2298045139')
+PLUGIN:AddLink('discord', 'Links to our Main Discord', 'https://discord.gg/Y5QqsCZvuz')
+PLUGIN:AddLink('barracks', 'Links to our Barracks Discord', 'https://discord.gg/NmUVPaYy6r')

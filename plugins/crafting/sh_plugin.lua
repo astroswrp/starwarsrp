@@ -43,119 +43,17 @@ end
 TODO: For release, demonstrate full capacity of plugin.
 ---------------------------------------------------------------------------]]
 local NEW_RECIPES = {
-	["metal_downgrade_reclaimed"] = {
-		["name"] = "Breakdown: Reclaimed Metal",
-		["model"] = "models/props_c17/oildrumchunk01d.mdl",
-		["desc"] = "Break down Reclaimed Metal into Scrap Metal.",
-		["requirements"] = {["reclaimed_metal"] = 1, ["scrap_hammer"] = 1},
-		["results"] = {["scrap_metal"] = 2},
-		["category"] = "Metal Breakdown"
-	},
-	["metal_downgrade_refined"] = {
-		["name"] = "Breakdown: Refined Metal",
-		["model"] = "models/props_c17/canisterchunk02a.mdl",
-		["desc"] = "Break down Refined Metal into Reclaimed Metal.",
-		["requirements"] = {["refined_metal"] = 1, ["scrap_hammer"] = 1},
-		["results"] = {["reclaimed_metal"] = 2},
-		["category"] = "Metal Breakdown",
-	},
-	["metal_upgrade_reclaimed"] = {
-		["name"] = "Metal: Reclaimed Metal",
-		["model"] = "models/props_c17/oildrumchunk01d.mdl",
-		["desc"] = "Break down Refined Metal into Reclaimed Metal.",
-		["requirements"] = {["scrap_metal"] = 3},
-		["results"] = {["reclaimed_metal"] = 1},
-		["category"] = "Metal Upgrade",
+	["transparisteel"] = {
+		["name"] = "Transparisteel",
+		["model"] = "models/illusion/eftcontainers/plexiglass.mdl",
+		["desc"] = "Create Transparisteel from Refined Lommite Ore",
+		["requirements"] = {["r_lommite"] = 2},
+		["results"] = {["transparisteel"] = 1},
+		["category"] = "Refined Materials"
 	}
+
 }
 
 for k, v in pairs(NEW_RECIPES) do
 	PLUGIN:AddRecipe(v.name, v.model, v.desc, v.requirements, v.results, k, v.skill or nil, v.blueprint or nil, v.guns or nil, v.entity or nil, v.category or "Miscellaneous")
-end
-
---[[-------------------------------------------------------------------------
-Tying in with the 'Citizen Production Plugin', adding schematics for study.
----------------------------------------------------------------------------]]
-for k, v in pairs(ix.item.list) do
-	if v.category == "Schematics" then
-		local tbl = v.requirements
-		local tbl2 = v.result
-		local req_table_empty = {}
-		local res_table_empty = {}
-		for k2, v2 in pairs(tbl) do
-			req_table_empty[v2[1]] = v2[2]
-		end
-		for k3,v3 in pairs(tbl2) do
-			if v3[1] != "manufacturing_ticket" then
-				res_table_empty[v3[1]] = v3[2]
-			end
-		end
-		PLUGIN:AddRecipe(v.name, v.model, v.description .. "\nYou studied this blueprint from the factories.", req_table_empty, res_table_empty, v.uniqueID, false, v.uniqueID)
-	end
-end
-
-ix.util.Include("cl_plugin.lua")
-ix.util.Include("sv_plugin.lua")
-ix.util.Include("sh_items.lua")
-
-ix.command.Add("BlueprintGive", {
-	description = "Give a blueprint to a player.",
-	adminOnly = true,
-	arguments = {ix.type.character, ix.type.string},
-	OnRun = function(self, client, target, blueprint)
-		local data = target:GetData("blueprints", {})
-
-		if not table.HasValue(data, blueprint) then
-			table.insert(data, blueprint)
-		else
-			client:Notify(target:GetName() .. " already has this blueprint.")
-
-			return
-		end
-
-		target:SetData("blueprints", data)
-		client:Notify("You have given " .. target:GetName() .. " the blueprint " .. blueprint .. ".")
-		target.player:Notify("You have been given the blueprint " .. blueprint .. " by " .. client:Name())
-	end
-})
-
-ix.command.Add("BlueprintRemove", {
-	description = "Give a blueprint to a player.",
-	adminOnly = true,
-	arguments = {ix.type.character, ix.type.string},
-	OnRun = function(self, client, target, blueprint)
-		local data = target:GetData("blueprints", {})
-
-		if table.HasValue(data, blueprint) then
-			table.RemoveByValue(data, blueprint)
-		else
-			client:Notify(target:GetName() .. " does not have this blueprint.")
-		end
-
-		target:SetData("blueprints", data)
-		client:Notify("You have taken " .. target:GetName() .. " the blueprint " .. blueprint .. ".")
-		target.player:Notify("You have had the blueprint " .. blueprint .. " taken from you by " .. client:Name())
-	end
-})
-
-local charMeta = ix.meta.character
-
-function charMeta:GiveBlueprint(blueprint)
-	local data = self:GetData("blueprints", {})
-
-	if not table.HasValue(data, blueprint) then
-		table.insert(data, blueprint)
-	end
-
-	self:SetData("blueprints", data)
-end
-
-function charMeta:RemoveBlueprint(blueprint)
-	local data = target:GetData("blueprints", {})
-
-	if table.HasValue(data, blueprint) then
-		table.RemoveByValue(data, blueprint)
-	end
-
-	target:SetData("blueprints", data)
 end

@@ -1,4 +1,4 @@
-local bands = { --taka tablica, żeby nie zapierdalać po tabelach itemku
+local bands = {
 	["brown"] = {Color(102, 51, 51),"Brązowa opaska lojalisty"},
 	["red"] = {Color(192, 57, 43),"Czerwona opaska lojalisty"},
 	["green"] = {Color(39, 174, 96),"Zielona opaska lojalisty"},
@@ -9,8 +9,8 @@ local bands = { --taka tablica, żeby nie zapierdalać po tabelach itemku
 }
 
 function PLUGIN:PopulateCharacterInfo(client, character, tooltip)
-	local band = client:GetNW2String("band",false) --string z typem opaski, czyli można rzec, że kolorem
-	if band then --jako, że po zdjęciu banda NWString jest nilem to można zajebać takiego checka
+	local band = client:GetNW2String("band",false)
+	if band then
 		local panel = tooltip:AddRowAfter("name", "band")
 		panel:SetBackgroundColor(bands[band][1]) 
 		panel:SetText(bands[band][2])
