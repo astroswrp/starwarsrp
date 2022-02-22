@@ -187,190 +187,85 @@ ix.Scavenging.InformationTables["Default Template"] = { -- Example #2: Default T
 };
 
 ix.Scavenging.InformationTables["Blank Template"] = nil;
-ix.Scavenging.InformationTables["Default Template"] = nil;
 
---[[
-    Examples have been added to give a general understanding of what can be done.
-    Though, they may be a little lackluster due to the low variety of items in the default helix/hl2rp schema.
-]]
+-- custom scavenging stuffs
 
-ix.Scavenging.InformationTables["Trash Pile"] = {
-    ["Display Name"] = "Trash Pile",
-    ["Display Description"] = "A pile of rubbish and garbage.",
-    ["StartingModel"] = "models/props_junk/garbage128_composite001a.mdl",
-    ["Inventory Width"] = 4,
-    ["Inventory Height"] = 2,
-    ["Usage Message"] = function( client, character, entity, ShouldScavenge )
-        if( ShouldScavenge ) then
-            return "Scavenging...";
+ix.Scavenging.InformationTables["Test box"] = {
+    ["Display Name"] = "Testing Box",
+    ["Display Description"] = "Update this",
+    ["StartingModel"] = "models/prop_crates/imp_x64_a.mdl",
+    ["Inventory Width"] = 7,
+    ["Inventory Height"] = 7,
+    ["CanUse"] = function( client, character, entity )
+
+        return true;
+
+    end,
+    ["PerformScavenge"] = function( client, character, entity, ShouldScavenge )
+        -- Variables:
+        local tabl = ix.Scavenging.InformationTables[entity:GetTableName()];
+        local SItems = tabl["Amount of Spawned Items"]( client, character, entity );
+        local SCredits = tabl["Amount of Spawned Credits"]( character, character, entity );
+        local PItems = tabl["Possible Items"]( character, character, entity );
+        local ItemsToSpawn = {};
+        local PossibleItems = {};
+        -- Compiling:
+        for _, info in pairs( PItems ) do
+            local ItemID = info["ItemID"];
+            local Data = info["Data"] or {};
+            local Chance = info["Chance"] or 1;
+            for i = 1, Chance do
+                local Next = table.Count( PossibleItems ) + 1;
+                PossibleItems[Next] = {
+                    ["ItemID"] = ItemID,
+                    ["Data"] = Data,
+                };
+            end
         end
-        return "Checking...";
+        -- Randomly Selecting:
+        for i = 1, SItems do
+            local Next = table.Count( ItemsToSpawn ) + 1;
+            local Selected = table.Random( PossibleItems );
+            ItemsToSpawn[Next] = Selected;
+        end
+        -- Spawning:
+        for _, info in pairs( ItemsToSpawn ) do
+            if( !entity:GetInventory():Add( info["ItemID"], 1, info["Data"] ) ) then
+                local item = ix.item.Spawn( info["ItemID"], entity:GetPos(), nil, nil, info["Data"] );
+            end
+        end
+        if( SCredits and ix.util.GetTypeFromValue( SCredits ) == ix.type.number and math.max( 0, entity:GetMoney() + SCredits ) != 0 ) then
+            entity:SetMoney( entity:GetMoney() + SCredits );
+        end
+        entity:SetRemainingCooldown( PLUGIN:GetScavengingCooldown() );
+        return;
+    end,
+    ["Usage Message"] = function( client, character, entity, ShouldScavenge )
+
+        return "Unzipping...";
     end,
     ["Amount of Spawned Items"] = function( client, character, entity )
-        return 2;
+
+        return 10;
+
     end,
     ["Amount of Spawned Credits"] = function( client, character, entity )
+
         return 0;
-    end,
-    ["Possible Items"] = function( client, character, entity )
-        local Items = { 
-            [1] = {
-                ["ItemID"] = "water",
-                ["Data"] = {},
-                ["Chance"] = 2
-            },
-            [2] = {
-                ["ItemID"] = "request_device",
-                ["Data"] = {},
-                ["Chance"] = 2
-            }
-        };
-        return Items;
-    end
-};
 
-ix.Scavenging.InformationTables["Broken Vending Machine"] = {
-    ["Display Name"] = "Broken Vending Machine",
-    ["Display Description"] = "A machine that once distributed cans of water. It doesn't seem to vend anymore.",
-    ["StartingModel"] = "models/props_interiors/vendingmachinesoda01a.mdl",
-    ["Inventory Width"] = 4,
-    ["Inventory Height"] = 2,
-    ["Usage Message"] = function( client, character, entity, ShouldScavenge )
-        if( ShouldScavenge ) then
-            return "Scavenging...";
-        end
-        return "Checking...";
-    end,
-    ["Amount of Spawned Items"] = function( client, character, entity )
-        return 1;
-    end,
-    ["Amount of Spawned Credits"] = function( client, character, entity )
-        return math.random( 5, 8 );
     end,
     ["Possible Items"] = function( client, character, entity )
         local Items = { 
             [1] = {
-                ["ItemID"] = "water",
-                ["Data"] = {},
-                ["Chance"] = 16
-            },
-            [2] = {
-                ["ItemID"] = "water_sparkling",
+                ["ItemID"] = "rlommite",
                 ["Data"] = {},
                 ["Chance"] = 3
             },
-            [3] = {
-                ["ItemID"] = "water_special",
+            [2] = {
+                ["ItemID"] = "transparisteel",
                 ["Data"] = {},
                 ["Chance"] = 1
             }
-        };
-        return Items;
-    end
-};
-
-ix.Scavenging.InformationTables["Abandoned Crate"] = {
-    ["Display Name"] = "Abandoned Crate",
-    ["Display Description"] = "A mysterious crate. It's content is entirely unknown until seen with one's eyes.",
-    ["StartingModel"] = "models/props_junk/wood_crate001a.mdl",
-    ["Inventory Width"] = 4,
-    ["Inventory Height"] = 2,
-    ["Usage Message"] = function( client, character, entity, ShouldScavenge )
-        if( ShouldScavenge ) then
-            return "Scavenging...";
-        end
-        return "Checking...";
-    end,
-    ["Amount of Spawned Items"] = function( client, character, entity )
-        return 1;
-    end,
-    ["Amount of Spawned Credits"] = function( client, character, entity )
-        return 0;
-    end,
-    ["Possible Items"] = function( client, character, entity )
-        local Items = { 
-            [1] = {
-                ["ItemID"] = "bandage",
-                ["Data"] = {},
-                ["Chance"] = 1
-            },
-            [2] = {
-                ["ItemID"] = "chinese_takeout",
-                ["Data"] = {},
-                ["Chance"] = 1
-            },
-            [3] = {
-                ["ItemID"] = "combinelock",
-                ["Data"] = {},
-                ["Chance"] = 1
-            },
-            [4] = {
-                ["ItemID"] = "handheld_radio",
-                ["Data"] = {
-                    ["enabled"] = false
-                },
-                ["Chance"] = 1
-            },
-            [5] = {
-                ["ItemID"] = "health_kit",
-                ["Data"] = {},
-                ["Chance"] = 1
-            },
-            [6] = {
-                ["ItemID"] = "health_vial",
-                ["Data"] = {},
-                ["Chance"] = 1
-            },
-            [7] = {
-                ["ItemID"] = "melon",
-                ["Data"] = {},
-                ["Chance"] = 1
-            },
-            [8] = {
-                ["ItemID"] = "metropolice_supplements",
-                ["Data"] = {},
-                ["Chance"] = 1
-            },
-            [9] = {
-                ["ItemID"] = "milk_carton",
-                ["Data"] = {},
-                ["Chance"] = 1
-            },
-            [10] = {
-                ["ItemID"] = "ration",
-                ["Data"] = {},
-                ["Chance"] = 1
-            },
-            [11] = {
-                ["ItemID"] = "request_device",
-                ["Data"] = {},
-                ["Chance"] = 1
-            },
-            [12] = {
-                ["ItemID"] = "supplements",
-                ["Data"] = {},
-                ["Chance"] = 1
-            },
-            [13] = {
-                ["ItemID"] = "water",
-                ["Data"] = {},
-                ["Chance"] = 1
-            },
-            [14] = {
-                ["ItemID"] = "water_sparkling",
-                ["Data"] = {},
-                ["Chance"] = 1
-            },
-            [15] = {
-                ["ItemID"] = "water_special",
-                ["Data"] = {},
-                ["Chance"] = 1
-            },
-            [16] = {
-                ["ItemID"] = "zip_tie",
-                ["Data"] = {},
-                ["Chance"] = 1
-            },
         };
         return Items;
     end
