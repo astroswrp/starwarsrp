@@ -5,6 +5,7 @@ Schema.description = "A Semi-SeriousRP Server"
 
 -- Include netstream
 ix.util.Include("libs/thirdparty/sh_netstream2.lua")
+ix.currency.model = "models/sw_galactic_credits/galactic_credit.mdl"
 
 ix.util.Include("sh_configs.lua")
 ----ix.util.Include("sv_schema.lua")
