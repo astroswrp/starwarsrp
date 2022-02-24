@@ -58,7 +58,7 @@ ix.adminSystem.music = {
         {"They Will Come", "sw/they_will_come.mp3"},
     },
     ["Cantina"] = {
-        {"Average Brown Wookie", "sw/average_brown_wookie.mp3"},
+        {"Average Brown Wookie", "sw/average_brown_wookiee.mp3"},
         {"Cantina Band", "sw/cantina_band.mp3"},
         {"Credits Where Credits Are Due", "sw/credits_where_credits_are_due.mp3"},
         {"Do the Holos Show Up On the Bill", "sw/do_the_holos_show_up_on_the_bill.mp3"},
@@ -89,7 +89,7 @@ ix.adminSystem.music = {
         {"Nihilus Theme", "sw/nihilus_theme.mp3"},
         {"Snoke", "sw/snoke.mp3"},
         {"Treachery, the Sith Inquisitor", "sw/treachery_the_sith_inquisitor.mp3"},
-        {"Tython, the Wellspring", "sw_tython_the_wellspring.mp3"},
+        {"Tython, the Wellspring", "sw/tython_the_wellspring.mp3"},
         {"Villainy, the Imperial Agent", "sw/villainy_the_imperial_agent.mp3"},
     },
     ["Post Event"] = {

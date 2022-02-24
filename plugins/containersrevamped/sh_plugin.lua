@@ -235,7 +235,7 @@ end
 function PLUGIN:InitializedPlugins()
 	for k, v in pairs(ix.container.stored) do
 		if (v.name and v.width and v.height) then
-			ix.item.RegisterInv("container:" .. k:lower(), v.width, v.height)
+			ix.inventory.Register("container:" .. k:lower(), v.width, v.height)
 		else
 			ErrorNoHalt("[Helix] Container for '"..k.."' is missing all inventory information!\n")
 			ix.container.stored[k] = nil
