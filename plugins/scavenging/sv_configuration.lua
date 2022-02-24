@@ -190,9 +190,9 @@ ix.Scavenging.InformationTables["Blank Template"] = nil;
 
 -- custom scavenging stuffs
 
-ix.Scavenging.InformationTables["Test box"] = {
-    ["Display Name"] = "Testing Box",
-    ["Display Description"] = "Update this",
+ix.Scavenging.InformationTables["Rock"] = {
+    ["Display Name"] = "Rock",
+    ["Display Description"] = "Rock",
     ["StartingModel"] = "models/prop_crates/imp_x64_a.mdl",
     ["Inventory Width"] = 7,
     ["Inventory Height"] = 7,
@@ -242,7 +242,7 @@ ix.Scavenging.InformationTables["Test box"] = {
     end,
     ["Usage Message"] = function( client, character, entity, ShouldScavenge )
 
-        return "Unzipping...";
+        return "Mining...";
     end,
     ["Amount of Spawned Items"] = function( client, character, entity )
 

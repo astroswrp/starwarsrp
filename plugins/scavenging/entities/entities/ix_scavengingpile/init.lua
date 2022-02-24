@@ -182,9 +182,6 @@ function ENT:CanScavenge( client, character )
 	if( self:GetRemainingCooldown() != 0 ) then
 		return "Try again in " .. tostring( self:GetRemainingCooldown() ) .. " seconds.";
 	end
-	if( !character:GetInventory():HasItem( "scavengingkit" ) ) then
-		return "You don't have a scavenging kit.";
-	end
 	return true;
 end
 
