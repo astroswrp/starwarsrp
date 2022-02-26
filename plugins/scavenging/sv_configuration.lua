@@ -94,29 +94,18 @@ ix.Scavenging.InformationTables["Blank Template"] = { -- Example #1: Blank Templ
     end
 };
 
-ix.Scavenging.InformationTables["Default Template"] = { -- Example #2: Default Template.
-    ["Display Name"] = "Template With Default/Expected Results",
-    ["Display Description"] = "A template that returns results that would typically occur by default.",
-    ["StartingModel"] = "models/hunter/blocks/cube025x025x025.mdl",
-    ["Inventory Width"] = 2,
-    ["Inventory Height"] = 2,
+-- custom scavenging stuffs
+
+ix.Scavenging.InformationTables["Rock"] = {
+    ["Display Name"] = "Rock",
+    ["Display Description"] = "Rock",
+    ["StartingModel"] = "models/brickscrafting/rock.mdl",
+    ["Inventory Width"] = 5,
+    ["Inventory Height"] = 5,
     ["CanUse"] = function( client, character, entity )
+
         return true;
-    end,
-    ["CanScavenge"] = function( client, character, entity )
-        if( !PLUGIN:GetScavengingEnabled() ) then
-            return "Scavenging is currently disabled.";
-        end
-        if( table.Count( player.GetAll() ) < PLUGIN:GetScavengingPlayerMinimum() ) then
-            return "There is not enough players on.";
-        end
-        if( entity:GetRemainingCooldown() != 0 ) then
-            return "Try again in " .. tostring( entity:GetRemainingCooldown() ) .. " seconds.";
-        end
-        if( !character:GetInventory():HasItem( "scavengingkit" ) ) then
-            return "You don't have a scavenging kit.";
-        end
-        return true;
+
     end,
     ["PerformScavenge"] = function( client, character, entity, ShouldScavenge )
         -- Variables:
@@ -158,26 +147,28 @@ ix.Scavenging.InformationTables["Default Template"] = { -- Example #2: Default T
         return;
     end,
     ["Usage Message"] = function( client, character, entity, ShouldScavenge )
-        if( ShouldScavenge ) then
-            return "Scavenging...";
-        end
-        return "Checking...";
+
+        return "Mining...";
     end,
     ["Amount of Spawned Items"] = function( client, character, entity )
-        return 1;
+
+        return 5;
+
     end,
     ["Amount of Spawned Credits"] = function( client, character, entity )
+
         return 0;
+
     end,
     ["Possible Items"] = function( client, character, entity )
         local Items = { 
             [1] = {
-                ["ItemID"] = "water",
+                ["ItemID"] = "lommite",
                 ["Data"] = {},
-                ["Chance"] = 1
+                ["Chance"] = 3
             },
             [2] = {
-                ["ItemID"] = "request_device",
+                ["ItemID"] = "zersium",
                 ["Data"] = {},
                 ["Chance"] = 1
             }
@@ -186,14 +177,10 @@ ix.Scavenging.InformationTables["Default Template"] = { -- Example #2: Default T
     end
 };
 
-ix.Scavenging.InformationTables["Blank Template"] = nil;
-
--- custom scavenging stuffs
-
-ix.Scavenging.InformationTables["Rock"] = {
-    ["Display Name"] = "Rock",
-    ["Display Description"] = "Rock",
-    ["StartingModel"] = "models/prop_crates/imp_x64_a.mdl",
+ix.Scavenging.InformationTables["Medical Case"] = {
+    ["Display Name"] = "Medical Case",
+    ["Display Description"] = "A Medical Case. Cold to the touch and has the scribblings of a name on it, but they are smudged.",
+    ["StartingModel"] = "models/illusion/eftcontainers/medscase.mdl",
     ["Inventory Width"] = 7,
     ["Inventory Height"] = 7,
     ["CanUse"] = function( client, character, entity )
@@ -246,7 +233,7 @@ ix.Scavenging.InformationTables["Rock"] = {
     end,
     ["Amount of Spawned Items"] = function( client, character, entity )
 
-        return 10;
+        return 5;
 
     end,
     ["Amount of Spawned Credits"] = function( client, character, entity )
@@ -257,12 +244,22 @@ ix.Scavenging.InformationTables["Rock"] = {
     ["Possible Items"] = function( client, character, entity )
         local Items = { 
             [1] = {
-                ["ItemID"] = "rlommite",
+                ["ItemID"] = "medsup",
                 ["Data"] = {},
                 ["Chance"] = 3
             },
             [2] = {
-                ["ItemID"] = "transparisteel",
+                ["ItemID"] = "bvial",
+                ["Data"] = {},
+                ["Chance"] = 2
+            },
+            [3] = {
+                ["ItemID"] = "bandage",
+                ["Data"] = {},
+                ["Chance"] = 1
+            },
+            [4] = {
+                ["ItemID"] = "morphine",
                 ["Data"] = {},
                 ["Chance"] = 1
             }

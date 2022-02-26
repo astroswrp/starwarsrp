@@ -11,36 +11,35 @@
 
 ix.container.Register("models/lordtrilobite/starwars/props/fueltank_scarif1_phys.mdl", {
 	name = "Fuel Storage",
-	description = "A barrel where fuel can be stored",
+	description = "Fuel Storage Cell. Able to contain large quantities of fuel",
 	width = 2,
 	height = 6,
 })
 
 ix.container.Register("models/lordtrilobite/starwars/props/kyber_crate_phys.mdl", {
 	name = "Contraband",
-	description = "A container in which to store contraband",
+	description = "Used by Military Police to store items confiscated off a persons for their illegality, or suspected illegality.",
 	width = 8,
 	height = 5,
 })
 
 ix.container.Register("models/reizer_props/srsp/sci_fi/crate_01/crate_01.mdl", {
 	name = "Ammo",
-	description = "A container in which to store ammo",
+	description = "Safely stores ammunition.",
 	width = 5,
 	height = 4,
 })
 
 ix.container.Register("models/reizer_props/srsp/sci_fi/crate_03/crate_03.mdl", {
 	name = "Medical",
-	description = "A container in which to store medical stuff",
+	description = "Used by Medical Technicians to store excess medical supplies.",
 	width = 5,
 	height = 4,
 })
 
-
 ix.container.Register("models/reizer_props/srsp/sci_fi/crate_05/crate_05.mdl", {
 	name = "Consumables Crate",
-	description = "A container in which to store consumables",
+	description = "Stores consumable items and keeps perisables fresh and ripe.",
 	width = 5,
 	height = 4,
 })
