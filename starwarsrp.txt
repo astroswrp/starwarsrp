@@ -1,7 +1,7 @@
-"ixhl2rp"
+"starwarsrp"
 {
 	"base"		"helix"
-	"title"		"HL2 RP"
+	"title"		"StarwarsRP"
 	"author"	"nebulous.cloud"
 	"category"	"rp"
 	"menusystem" "1"
