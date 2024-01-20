@@ -11,6 +11,7 @@ ix.util.Include("sh_configs.lua")
 ix.util.Include("cl_schema.lua")
 ix.util.Include("cl_hooks.lua")
 ix.util.Include("sh_hooks.lua")
+ix.util.Include("sv_hooks.lua")
 
 ix.util.Include("meta/sh_player.lua")
 ix.util.Include("meta/sv_player.lua")
