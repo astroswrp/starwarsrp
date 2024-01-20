@@ -9,3 +9,6 @@ end
 function PLUGIN:CanCreateCharacterInfo(suppress)
     suppress.description = true
 end
+
+ix.char.vars["description"].bNoDisplay = true
+ix.char.vars["description"].OnValidate = function() return true    end
