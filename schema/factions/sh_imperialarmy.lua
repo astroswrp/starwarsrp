@@ -8,9 +8,10 @@ FACTION.models = {
 	"models/nada/rogueonetk.mdl"
 }
 
---FACTION.weapons = {
-	--"weapon_empty_hands"
---}
+FACTION.weapons = {
+	"weapon_empty_hands"
+}
+
 function FACTION:OnCharacterCreated(client, character)
 	local inventory = character:GetInventory()
 
@@ -18,6 +19,6 @@ function FACTION:OnCharacterCreated(client, character)
 	--inventory:Add("crafting", 1)
 
 end
--- FACTION.isGloballyRecognized = true
+FACTION.isGloballyRecognized = true
 FACTION.isDefault = true
 FACTION_IGF = FACTION.index
